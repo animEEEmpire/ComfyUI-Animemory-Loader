@@ -21,6 +21,7 @@ curpath = os.path.dirname(os.path.abspath(__file__))
 
 class T5Tokenizer(sd1_clip.SDTokenizer):
     def __init__(self, tokenizer_path=None, max_length=227, pad_with_end=True, embedding_directory=None, embedding_size=4096, embedding_key='clip_l', tokenizer_class=CLIPTokenizer, has_start_token=True, pad_to_max_length=True, min_length=None):
+        super().__init__()
         # if tokenizer_path is None:
         #     tokenizer_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "sd1_tokenizer")
         self.tokenizer = XLMRobertaTokenizerFast.from_pretrained(os.path.join(curpath,"tokenizer"))
@@ -51,6 +52,7 @@ class T5Tokenizer(sd1_clip.SDTokenizer):
 
 class ALTCLIPTokenizer(sd1_clip.SDTokenizer):
     def __init__(self, tokenizer_path=None, max_length=227, pad_with_end=True, embedding_directory=None, embedding_size=1280, embedding_key='clip_g', tokenizer_class=CLIPTokenizer, has_start_token=True, pad_to_max_length=True, min_length=None):
+        super().__init__()
         # if tokenizer_path is None:
         #     tokenizer_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "sd1_tokenizer")
         self.tokenizer = XLMRobertaTokenizerFast.from_pretrained(os.path.join(curpath,"tokenizer"))
